@@ -2,6 +2,11 @@ header {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    background-image:url(/header.jpeg);
+    height: 180px;
+    background-repeat: repeat;
+    background-position: center;
+    
 }
 #rodape{
     text-align: center;
@@ -16,7 +21,7 @@ header {
     text-align: center;
     border: 3px solid red;
     height: 50px;
-
+    background-color: rgba(53, 138, 112, 0.301);
 }
 #titulo{
     font-size: large;
@@ -24,9 +29,20 @@ header {
 #principal{
     display: flex;
     padding-right: 40px;
-    }
+}
 #imagem1 {
     float:right;
     margin-right:200px;
     margin-top: 50px;
+}
+body{
+    background-color: rgba(53, 138, 112, 0.301);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 20px;
+    }
+ul li{
+    list-style: none;
+}
+#soco{
+    text-decoration: underline;
 }
