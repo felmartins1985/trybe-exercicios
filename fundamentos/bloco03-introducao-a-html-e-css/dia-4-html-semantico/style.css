@@ -2,10 +2,10 @@ header {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    background-image:url(/header.jpeg);
-    height: 180px;
-    background-repeat: repeat;
+    background-image:url(header1.jpeg);
+    height:100px;
     background-position: center;
+    background-size: contain;
     
 }
 #rodape{
@@ -45,4 +45,10 @@ ul li{
 }
 #soco{
     text-decoration: underline;
+}
+#header {
+    padding-top: 20px;
+}
+#navegacao {
+    padding-top: 10px;
 }
