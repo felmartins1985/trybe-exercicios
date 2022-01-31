@@ -1,0 +1,32 @@
+header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+#rodape{
+    text-align: center;
+}
+#artigo{
+    width: 100%;
+    border: 3px solid black;  
+}
+#aside{
+    display: inline;
+    width: 40%;
+    text-align: center;
+    border: 3px solid red;
+    height: 50px;
+
+}
+#titulo{
+    font-size: large;
+}
+#principal{
+    display: flex;
+    padding-right: 40px;
+    }
+#imagem1 {
+    float:right;
+    margin-right:200px;
+    margin-top: 50px;
+}
