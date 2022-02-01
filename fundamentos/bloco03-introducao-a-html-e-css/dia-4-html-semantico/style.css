@@ -2,13 +2,14 @@ header {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    background-image:url(header1.jpeg);
-    height:100px;
-    background-position: center;
-    background-size: contain;
+ }
+body{
+    background-image: url(/header1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
-#rodape{
+ #rodape{
     text-align: center;
 }
 #artigo{
@@ -20,8 +21,9 @@ header {
     width: 40%;
     text-align: center;
     border: 3px solid red;
-    height: 50px;
+    height: 90px;
     background-color: rgba(53, 138, 112, 0.301);
+    padding-top: 0px;
 }
 #titulo{
     font-size: large;
@@ -29,11 +31,23 @@ header {
 #principal{
     display: flex;
     padding-right: 40px;
+    background-color: rgba(53, 138, 112, 0.301);
+ 
 }
 #imagem1 {
     float:right;
     margin-right:200px;
     margin-top: 50px;
+    border-radius: 20px;
+}
+#imagem2{
+    padding-left: 300px;
+}
+#imagem3{
+    padding-left: 300px;
+}
+#imagem4{
+    padding-left: 300px;
 }
 body{
     background-color: rgba(53, 138, 112, 0.301);
@@ -51,4 +65,10 @@ ul li{
 }
 #navegacao {
     padding-top: 10px;
+    color: white;
+}
+ul li a{
+    color: white;
+}
+
 }
