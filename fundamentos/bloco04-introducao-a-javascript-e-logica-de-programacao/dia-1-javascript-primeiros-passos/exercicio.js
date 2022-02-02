@@ -72,6 +72,14 @@ if(nota<0 || nota>100){
 } else if(nota>=50){
     console.log("E");
 }
-
-  
+const x=1;
+const y=2;
+const z=3;
+let temPar;
+if ((x%2==0 || y%2==0 || z%2==0)){
+    temPar= true;
+} else {
+    temPar=false;
+}
+console.log(temPar)
 
