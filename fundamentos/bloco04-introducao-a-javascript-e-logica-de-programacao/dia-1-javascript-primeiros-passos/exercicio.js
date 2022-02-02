@@ -31,4 +31,18 @@ const h=4;
     } else{
         console.log("zero");
     }
+let angulaA=50;
+let angulaB=60;
+let angulaC=70;
+let somaDosAngulas= angulaA+angulaB+angulaC;
+let todosOsAngulasSaoPositivos= angulaA>0 && angulaB>0 && angulaC>0;
+if(todosOsAngulasSaoPositivos){
+    if(somaDosAngulas=180){
+        console.log(true);
+    } else {
+        console.log(false)
+    }
+} else {
+    console.log("Erro");
+}
 
