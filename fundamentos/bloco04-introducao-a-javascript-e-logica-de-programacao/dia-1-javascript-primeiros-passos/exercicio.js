@@ -82,4 +82,13 @@ if ((x%2==0 || y%2==0 || z%2==0)){
     temPar=false;
 }
 console.log(temPar)
-
+const m=4;
+const n=6;
+const o=8;
+let temImpar;
+if((m%2==0 || n%2==0 || o%2==0)){
+    temImpar=false;
+} else {
+    temImpar=true;
+}
+console.log(temImpar);
