@@ -23,4 +23,12 @@ if (e>f && e>g){
 } else {
     console.log ("O número "+ g+" é o maior dos 3")
 }
+const h=4;
+    if (h>0){
+        console.log ("positive");
+    } else if (h<0){
+        console.log("negative");
+    } else{
+        console.log("zero");
+    }
 
