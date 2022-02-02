@@ -92,3 +92,12 @@ if((m%2==0 || n%2==0 || o%2==0)){
     temImpar=true;
 }
 console.log(temImpar);
+const custo=10;
+const valorDeVenda=20;
+if (custo>=0 && valorDeVenda>0){
+    const custoTotal= custo *1.2;
+    const lucro= (valorDeVenda - custoTotal) *1000;
+    console.log(lucro);
+} else{
+    console.log("Erro");
+}
