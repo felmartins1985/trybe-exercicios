@@ -13,4 +13,14 @@ if (c>d){
 } else if (d>c) {
     console.log ("O número "+ d+" é o maior")
 }
+const e=7;
+const f=8;
+const g=9;
+if (e>f && e>g){
+    console.log("O número "+ e+" é o maior dos 3" );
+} else if (f>e && f>g) {
+    console.log ("O número "+f+ "é o maior dos 3");
+} else {
+    console.log ("O número "+ g+" é o maior dos 3")
+}
 
