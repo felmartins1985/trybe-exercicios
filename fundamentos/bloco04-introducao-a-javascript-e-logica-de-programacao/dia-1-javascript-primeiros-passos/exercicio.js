@@ -37,7 +37,7 @@ let angulaC=70;
 let somaDosAngulas= angulaA+angulaB+angulaC;
 let todosOsAngulasSaoPositivos= angulaA>0 && angulaB>0 && angulaC>0;
 if(todosOsAngulasSaoPositivos>0){
-    if(somaDosAngulas=180){
+    if(somaDosAngulas==180){
         console.log(true);
     } else {
         console.log(false)
@@ -92,6 +92,7 @@ if((m%2==0 || n%2==0 || o%2==0)){
     temImpar=true;
 }
 console.log(temImpar);
+
 const custo=10;
 const valorDeVenda=20;
 if (custo>=0 && valorDeVenda>0){
