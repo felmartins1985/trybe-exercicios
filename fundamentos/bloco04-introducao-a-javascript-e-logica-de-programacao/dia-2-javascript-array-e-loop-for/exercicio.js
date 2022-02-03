@@ -44,3 +44,21 @@ if (impar===0){
 } else{
     console.log(impar);
 }
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let menor=200;
+for (let index=0; index<numbers.length; index+=1){
+    if (numbers[index]<menor);
+    menor= numbers[index];
+}
+console.log(menor);
+
+let numbers=[]
+for (let index=0; index<26; index+=1){
+    numbers.push(index);
+}
+console.log(numbers);
+
+for (let div=0; div<numbers.length;div+=1){
+    console.log(numbers[div]/2);
+}
