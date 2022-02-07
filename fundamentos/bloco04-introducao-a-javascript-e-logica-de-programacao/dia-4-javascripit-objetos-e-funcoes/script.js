@@ -71,3 +71,63 @@
 // }
 // console.log(verificar("arara"));
 
+// function indiceMaior (numero) {
+//     let maior=0;
+//     for(let indice in numero){
+//         if (numero[maior]<numero[indice]){
+//             maior=indice;
+//         }
+//     }
+//     return maior;
+// }
+// console.log(indiceMaior([2,3,6,7,10,1]))
+
+// function indiceMenor (numero) {
+//     let menor=0;
+//     for(let indice in numero){
+//         if (numero[menor]>numero[indice]){
+//             menor=indice;
+//         }
+//     }
+//     return menor;
+// }
+// console.log(indiceMenor([2,3,6,7,10,1]))
+
+// function maiorNome (nome) {
+//     let maior=nome[0];
+//     for (let indice in nome){
+//         if(maiorNome.length<nome[indice].length){
+//             maiorNome=nome[indice];
+//         }
+//     }
+//     return maiorNome;
+// }
+// console.log(maiorNome(["josé","lucas","nádia","fernanda","joana"]));
+
+// function soma(numeros){
+//     let soma=0;
+//     for (let index=0; index<=numeros;index+=1){
+//         soma+= index;
+//     }
+//     return soma;
+// }
+// // console.log(soma(5));
+// function verificarFimPalavra(nome1, nome2){
+// let palavra=nome1.split('').reverse().join('');
+// let fimPalavra=nome2.split('').reverse().join("");
+// let resultado;
+// for (let index=0;index<fimPalavra.length;index+=1){
+//     if(palavra[index]!==fimPalavra[index]){
+//         resultado= false;
+//         break;
+//     } else{
+//         resultado= true;
+//     }
+// }
+//     return resultado
+// }
+
+// console.log(verificarFimPalavra("trybe","be"));
+
+let nome="felipe"
+console.log(nome.join(''));
