@@ -1,46 +1,47 @@
-let fator=10;
-for (let index=10;index>0;index-=1){
-    fator*=index;
-}
-console.log(fator);
+// let fator=10;
+// for (let index=10;index>0;index-=1){
+//     fator*=index;
+// }
+// console.log(fator);
 
-let word="tryber";
-let invertido= word.split("").reverse().join("");
-let invert="";
-console.log(invertido);
-for (index=word.length-1;index>=0;index-=1){
-    invert=word[index];
-    console.log(invert);
-}
+// let word="tryber";
+// let invertido= word.split("").reverse().join("");
+// let invert="";
+// console.log(invertido);
 
-let array = ['java', 'javascript', 'python', 'html', 'css'];
-let maiorArray= array[0];
-let menorArray= array[0];
-for (let index=0; index<array.length; index+=1){
-    if(array[index].length>maiorArray.length){
-        maiorArray= array[index];
-    }
-}
-console.log(maiorArray);
+// for (index=word.length-1;index>=0;index-=1){
+//     invert=word[index];
+//     console.log(invert);
+// }
 
-for (let index2=0; index2<array.length;index2+=1){
-    if(array[index2].length<menorArray.length){
-        menorArray=array[index2];
-    }
-}
-console.log(menorArray);
+// let array = ['java', 'javascript', 'python', 'html', 'css'];
+// let maiorArray= array[0];
+// let menorArray= array[0];
+// for (let index=0; index<array.length; index+=1){
+//     if(array[index].length>maiorArray.length){
+//         maiorArray= array[index];
+//     }
+// }
+// console.log(maiorArray);
 
-let biggestPrimeNumber = 0;
+// for (let index2=0; index2<array.length;index2+=1){
+//     if(array[index2].length<menorArray.length){
+//         menorArray=array[index2];
+//     }
+// }
+// console.log(menorArray);
 
-for (let currentNumber = 0; currentNumber <= 50; currentNumber += 1) {
+let biggestPrimeNumber = 1;
+
+for (let currentNumber = 2; currentNumber <= 50; currentNumber += 1) {
   let isPrime = true;
   for (let currentDivisor = 2; currentDivisor < currentNumber; currentDivisor += 1) {
     if (currentNumber % currentDivisor === 0) {
       isPrime = false;
     }
   }
-  if (isPrime) {
-    biggestPrimeNumber = currentNumber;
+  if (isPrime==true) {
+    biggestPrimeNumber = biggestPrimeNumber+" "+ currentNumber;
   }
 }
 
