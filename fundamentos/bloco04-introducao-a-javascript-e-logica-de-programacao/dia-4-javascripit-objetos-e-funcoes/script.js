@@ -129,5 +129,3 @@
 
 // console.log(verificarFimPalavra("trybe","be"));
 
-let nome="felipe"
-console.log(nome.join(''));
