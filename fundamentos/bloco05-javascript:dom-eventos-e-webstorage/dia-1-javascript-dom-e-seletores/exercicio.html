@@ -66,7 +66,24 @@
             letter.innerText="Exercício 5.1- JavaScript";   
         }
         changeletter();
-
+        // exercicio 5
+        function upCase(){
+            let upperCase=document.getElementsByTagName("p")[0];
+            upperCase.innerText=upperCase.innerText.toUpperCase();
+        }
+        upCase();
+        //eu quero que o texto do upperCase fique todo maiusculo. Para isso, eu tenho que colocar
+        // // o innterText para que ele saiba que é o que está escrito.
+        // ai eu coloco para o upperCase ser igual ao upperCase.innerText maisculo
+        
+        // exercicio 6 Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        function show(){
+            let tagP= document.getElementsByTagName("p");
+            for (let index=0; index<tagP.length;index+=1){
+                console.log(tagP[index].innerText);
+            }
+        }
+        show();
     </script>
   </body>
 </html>
