@@ -48,14 +48,25 @@
             paragraph.innerText=" Estar trabalhando na area de Desenvolvimento Web!";
         }
         changetext();
-// 2. Crie uma função que mude a cor do quadrado amarelo 
-// para o verde da Trybe (rgb(76,164,109)).
+        // exercicio 2
         function changecolor(){
             let mudacor=document.getElementsByClassName('main-content')[0];
             mudacor.style.background="rgb(76,164,109)";
         }
         changecolor();
-     
- </script>
+        // exercicio 3 
+        function changewhite(){
+            let center=document.getElementsByClassName("center-content")[0];
+            center.style.background="white";
+        }
+        changewhite();
+        // exercicio 4 
+        function changeletter(){
+            let letter=document.getElementsByTagName("h1")[0];
+            letter.innerText="Exercício 5.1- JavaScript";   
+        }
+        changeletter();
+
+    </script>
   </body>
 </html>
