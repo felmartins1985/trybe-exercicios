@@ -1,10 +1,12 @@
 const header= document.getElementById("container");
 header.style.backgroundColor="red";
-const classs= document.getElementsByClassName("emergency-tasks");
-// classs.style.backgroundColor="green";
-for (let index=0;index<classs.length;index+=1){
-classs[index].style.backgroundColor="black";
-}
+const clas=document.getElementsByClassName("emergency-tasks")[0];
+clas.style.backgroundColor="green";
+
+// const classs= document.getElementsByClassName("emergency-tasks");
+// for (let index=0;index<classs.length;index+=1){
+// classs[index].style.backgroundColor="black";
+// }
 
 
 const hh31=document.querySelector(".no-emergency-tasks h3");
