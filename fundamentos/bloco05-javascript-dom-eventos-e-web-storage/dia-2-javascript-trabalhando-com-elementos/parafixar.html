@@ -30,11 +30,20 @@
         filho.id="filhoDeOndeVoceEsta";
         ondeVoceEsta.appendChild(filho);
         //
-        const filhoDofilho=document.createElement("section");
-        filhoDofilho.id="oFilhoDoprimeiroFilhodoFilho";
-        primeiroFilho.appendChild(filhoDofilho);
+        const filhoDoFilho=document.createElement("section");
+        filhoDoFilho.id="oFilhoDoprimeiroFilhodoFilho";
+        primeiroFilho.appendChild(filhoDoFilho);
+        console.log(filhoDoFilho);
+
         //
-        const terceiroFilho3=filhoDofilho.parentElement.nextElementSibling;
-        console.log(terceiroFilho3);
+        for (let index=pai.childNodes.length-1;index>=0;index-=-1){
+            const currentChildren=pai.childNodes[index];
+            if(currentChildren.id!=="elementoOndeVoceEsta"){
+                currentChildren.remove();
+            }
+        }
+        const segundoEUltimoFilhoDoFilho=document.getElementById("segundoEUltimoFilhoDoFilho");
+        segundoEUltimoFilhoDoFilho.remove();
+        
     </script>
   </main>
