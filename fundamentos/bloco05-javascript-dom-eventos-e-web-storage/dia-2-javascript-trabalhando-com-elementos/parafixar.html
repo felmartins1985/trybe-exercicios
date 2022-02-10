@@ -1,0 +1,27 @@
+<main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+    <script>
+        const ondeVoceEsta=document.getElementById("elementoOndeVoceEsta");
+        const pai=ondeVoceEsta.parentNode;
+        pai.style.color="blue";
+        const primeiroFilhoDoFilho=document.getElementById("primeiroFilhoDoFilho");
+        primeiroFilhoDoFilho.innerText="Bom dia!";
+        const primeiroFilho=pai.firstElementChild;
+        const primeiroFilho2=ondeVoceEsta.previousSibling;
+        const atencao=ondeVoceEsta.nextSibling;
+        const terceiroFilho=ondeVoceEsta.nextElementSibling;
+        const terceiroFilho2=pai.lastElementChild.previousElementSibling;
+        //eu vou para o ultimento elemento filho para depois ir ao filho de antes.
+        console.log(terceiroFilho2);
+
+    </script>
+  </main>
