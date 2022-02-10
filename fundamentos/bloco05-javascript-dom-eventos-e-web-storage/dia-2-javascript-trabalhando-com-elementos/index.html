@@ -88,10 +88,23 @@
         tagImg.src="https://picsum.photos/200";
         tagSectionLeft.appendChild(tagImg);
     //
-        
-    
-      
-      
+        const tagUl=document.createElement("ul");
+        tagSectionRight.appendChild(tagUl);
+        const array=["um", "dois", "tres", "quatro", "cinco", "seis","sete","oito","nove","dez"];
+        for(let index=0;index<array.length;index+=1){
+            const tagLi=document.createElement("li");
+            tagLi.innerHTML=array[index];
+            tagUl.appendChild(tagLi);
+        }
+    // no caso acima, tentei criar o array[index] primeiro e nao funcionou
+    //entao tenho que fazer o createElement primeiro
+        for (let index=1;index<=3;index+=1){
+            const tagH3=document.createElement("h3");
+            tagH3.innerHTML= index;
+            tagMain.appendChild(tagH3);
+        }
+    //
+
       
       
       
