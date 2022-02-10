@@ -59,7 +59,7 @@
     <script>
         // Adicione a tag h1 com o texto Exercício 5.2 
         // - JavaScript DOM como filho da tag body ;
-      const h1=document.createElement("section");
+      const h1=document.createElement("h1");
       h1.innerText="Exercicio 5.2- JavaScript Dom";
       document.body.appendChild(h1);
     //   Adicione a tag main com a classe main-content como filho da tag body ;
@@ -104,10 +104,14 @@
             tagMain.appendChild(tagH3);
         }
     //
-
-      
-      
-      
+        h1.className="title";
+        const elementosH3=document.getElementsByTagName("h3");
+        for (let index=0;index<3;index+=1){
+            elementosH3[index].className="description";
+        }
+    //
+        tagMain.removeChild(tagSectionLeft);
+    //  
       
       
       
