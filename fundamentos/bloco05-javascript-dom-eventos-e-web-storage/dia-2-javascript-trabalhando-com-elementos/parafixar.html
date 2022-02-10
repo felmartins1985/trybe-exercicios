@@ -21,7 +21,20 @@
         const terceiroFilho=ondeVoceEsta.nextElementSibling;
         const terceiroFilho2=pai.lastElementChild.previousElementSibling;
         //eu vou para o ultimento elemento filho para depois ir ao filho de antes.
-        console.log(terceiroFilho2);
-
+        
+        const irmaoOndeVoceEsta=document.createElement("section");
+        irmaoOndeVoceEsta.id="irmaoOndeVoceEsta";
+        pai.appendChild(irmaoOndeVoceEsta);
+        //
+        const filho=document.createElement("section");
+        filho.id="filhoDeOndeVoceEsta";
+        ondeVoceEsta.appendChild(filho);
+        //
+        const filhoDofilho=document.createElement("section");
+        filhoDofilho.id="oFilhoDoprimeiroFilhodoFilho";
+        primeiroFilho.appendChild(filhoDofilho);
+        //
+        const terceiroFilho3=filhoDofilho.parentElement.nextElementSibling;
+        console.log(terceiroFilho3);
     </script>
   </main>
