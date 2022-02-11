@@ -103,13 +103,15 @@
             tagH3.innerHTML= index;
             tagMain.appendChild(tagH3);
         }
-    //
+    // no caso acima. se eu criar o tagH3 fora do for, vai ser impresso só uma vez e nao tres
         h1.className="title";
+    //
         const elementosH3=document.getElementsByTagName("h3");
         for (let index=0;index<3;index+=1){
             elementosH3[index].className="description";
         }
-    //
+    //tenho que criar uma variavel elementosH3 acima para recebers as tagNames h3 e assim fazer
+    // um laço de repetição para que todos os H3 recebem a classe
         tagMain.removeChild(tagSectionLeft);
     //  
         tagSectionRight.style.marginRight="auto";
