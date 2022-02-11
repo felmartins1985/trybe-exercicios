@@ -1,0 +1,49 @@
+<main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+    <script>
+        const ondeVoceEsta=document.getElementById("elementoOndeVoceEsta");
+        const pai=ondeVoceEsta.parentNode;
+        pai.style.color="blue";
+        const primeiroFilhoDoFilho=document.getElementById("primeiroFilhoDoFilho");
+        primeiroFilhoDoFilho.innerText="Bom dia!";
+        const primeiroFilho=pai.firstElementChild;
+        const primeiroFilho2=ondeVoceEsta.previousSibling;
+        const atencao=ondeVoceEsta.nextSibling;
+        const terceiroFilho=ondeVoceEsta.nextElementSibling;
+        const terceiroFilho2=pai.lastElementChild.previousElementSibling;
+        //eu vou para o ultimento elemento filho para depois ir ao filho de antes.
+        
+        const irmaoOndeVoceEsta=document.createElement("section");
+        irmaoOndeVoceEsta.id="irmaoOndeVoceEsta";
+        pai.appendChild(irmaoOndeVoceEsta);
+        //
+        const filho=document.createElement("section");
+        filho.id="filhoDeOndeVoceEsta";
+        ondeVoceEsta.appendChild(filho);
+        //
+        const filhoDoFilho=document.createElement("section");
+        filhoDoFilho.id="oFilhoDoprimeiroFilhodoFilho";
+        primeiroFilho.appendChild(filhoDoFilho);
+        console.log(filhoDoFilho);
+
+        //
+        for (let index=pai.childNodes.length-1;index>=0;index-=1){
+            const currentChildren=pai.childNodes[index];
+            if(currentChildren.id!=="elementoOndeVoceEsta"){
+                currentChildren.remove();
+            }
+        }
+        const segundoEUltimoFilhoDoFilho=document.getElementById("segundoEUltimoFilhoDoFilho");
+        segundoEUltimoFilhoDoFilho.remove();
+
+    </script>
+  </main>

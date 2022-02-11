@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        // Adicione a tag h1 com o texto Exercício 5.2 
+        // - JavaScript DOM como filho da tag body ;
+      const h1=document.createElement("h1");
+      h1.innerText="Exercicio 5.2- JavaScript Dom";
+      document.body.appendChild(h1);
+    //   Adicione a tag main com a classe main-content como filho da tag body ;
+        const tagMain=document.createElement("main");
+        tagMain.className="main-content";
+        document.body.appendChild(tagMain);
+    //
+        const tagSection=document.createElement("section");
+        tagSection.className="center-content";
+        tagMain.appendChild(tagSection);
+    //
+        const tagP=document.createElement("p");
+        tagP.innerText="Parte 4 do Exercicio 5.2";
+        tagSection.appendChild(tagP);
+    //
+        const tagSectionLeft=document.createElement("section");
+        tagSectionLeft.className="left-content";
+        tagMain.appendChild(tagSectionLeft);
+    //    
+        const tagSectionRight=document.createElement("section");
+        tagSectionRight.className="right-content";
+        tagMain.appendChild(tagSectionRight);
+    //
+        const tagImg=document.createElement("img");
+        tagImg.className="small-image";
+        tagImg.src="https://picsum.photos/200";
+        tagSectionLeft.appendChild(tagImg);
+    //
+        const tagUl=document.createElement("ul");
+        tagSectionRight.appendChild(tagUl);
+        const array=["um", "dois", "tres", "quatro", "cinco", "seis","sete","oito","nove","dez"];
+        for(let index=0;index<array.length;index+=1){
+            const tagLi=document.createElement("li");
+            tagLi.innerHTML=array[index];
+            tagUl.appendChild(tagLi);
+        }
+    // no caso acima, tentei criar o array[index] primeiro e nao funcionou
+    //entao tenho que fazer o createElement primeiro
+        for (let index=1;index<=3;index+=1){
+            const tagH3=document.createElement("h3");
+            tagH3.innerHTML= index;
+            tagMain.appendChild(tagH3);
+        }
+    // no caso acima. se eu criar o tagH3 fora do for, vai ser impresso só uma vez e nao tres
+        h1.className="title";
+    //
+        const elementosH3=document.getElementsByTagName("h3");
+        for (let index=0;index<3;index+=1){
+            elementosH3[index].className="description";
+        }
+    //tenho que criar uma variavel elementosH3 acima para recebers as tagNames h3 e assim fazer
+    // um laço de repetição para que todos os H3 recebem a classe
+        tagMain.removeChild(tagSectionLeft);
+    //  
+        tagSectionRight.style.marginRight="auto";
+    //
+        tagSection.style.backgroundColor="green";
+    //
+        tagUl.lastChild.remove();
+        tagUl.lastChild.remove();
+    // eu nao posso usar removeChild() no caso acima pq para usar removechild
+    // eu tenho que ter nomeado uma variavel as "ul" que desejo remover.
+      
+      
+      
+      
+      
+      
+      // COLOQUE SEU CÓDIGO AQUI
+    </script>
+  </body>
+</html>
