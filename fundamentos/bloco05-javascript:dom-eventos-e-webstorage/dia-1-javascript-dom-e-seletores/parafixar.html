@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+        document.getElementById("page-title").innerText="Botafogo de Futebol e Regatas";
+        document.getElementById("second-paragraph").innerText="Criado em 1907!";
+        document.getElementById("subtitle").innerText="O maior campeão de todos!!";
+    const para=document.getElementsByClassName("paragraph");
+    para[0].style.color="green";
+    para[0].style.fontSize="50px";
+    const subt=document.getElementsByTagName("h4")[0];
+    subt.style.color="blue";
+    </script>
+
+  </body>
+</html>
