@@ -84,21 +84,24 @@ createHolidayButton("Feriados");
 function displayHolidays(){
     let getHolidayButton=document.querySelector("#btn-holiday");
     let getHolidays=document.querySelectorAll(".holiday");
-    let backGroundColor='rgb(238,238,238)';
+    let backGroundColor='red';
     let setNewColor="white";
-//eu crio uma variavel que ira receber o id btn-holiday
+    
+    //eu crio uma variavel que ira receber o id btn-holiday
 //depois crio outra variavel que ira receber todas as classes que tenham holiday
 //crio uma variavel que ira receber a cor que eu desejo no background
 //e crio uma variavel com a cor atual   
     getHolidayButton.addEventListener("click",function(){
+
 //crio um addeventlistener para o get holiday button com o click e com a função anonima
 //lembro que nao fecho os parenteses apos o function
         for(let index=0;index<getHolidays.length;index+=1){
 //crio um for que ira contar até o tamanho do getholidays
             if(getHolidays[index].style.backGroundColor===setNewColor){           
-                getHolidays[index].style.backGroundColor=backGroundColor;
-//abro uma condicional que ira analisar se os index do hetholidays sao brancos
-//se forem brancos, irá mudar para a cor desejada
+                getHolidays[index].style.backgroundColor=backGroundColor;
+            // }
+                // //abro uma condicional que ira analisar se os index do hetholidays sao brancos
+// //se forem brancos, irá mudar para a cor desejada
             } else{
                 getHolidays[index].style.backGroundColor=setNewColor;
             }
@@ -163,9 +166,9 @@ function displayFriday(fridayArrays){
 // faço um else para quando clicar pela segunda vez, retornar ao que estava escrito antes
     })   
 }
-let dezFridays=[4,11,18,25];
+
 //crio um array com os dias que caem sexta-feira;
-displayFriday(dezFridays);
+displayFriday([4,11,18,25]);
 
 //exercicio 6
 //Implemente duas funções que criem um efeito de "zoom". 
@@ -272,5 +275,30 @@ function setTaskClass() {
   
   setTaskClass();
 
+//exercicio 10
+//Implemente uma função que adiciona um evento que ao clicar em
+// um dia do mês no calendário, atribua a este dia a cor da legenda
+// da sua tarefa selecionada.
+//Ao clicar novamente no dia com a cor da legenda,
+// a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
 
+function setDayColor() {
+  let selectedTask = document.getElementsByClassName('task selected');
+  let days = document.querySelector('#days');
+  let taskDiv = document.querySelector('.task');
+  let taskColor = taskDiv.style.backgroundColor;
+  
+  days.addEventListener('click', function(event){
+    let eventTargetColor = event.target.style.color;
+    if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+      let color = selectedTask[0].style.backgroundColor;
+      event.target.style.color = color;
+    } else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+    
+  });
+  
+};
 
+setDayColor();
