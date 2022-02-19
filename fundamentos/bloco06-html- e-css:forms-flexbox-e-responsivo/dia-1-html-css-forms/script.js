@@ -49,13 +49,13 @@ do limite de caracteres será retornado false
 caso contrario, sera retornado verdadeiro
  */
 function invalidacaoDoInput() {
-    const email = document.querySelector('#email-interessado').value.length;
+    const email = document.querySelector('#email-interessado').value.length;//so pega o tamanho
     const invalidEmail = email < 10 || email > 50;
   
-    const name = document.querySelector('#nome-interessado').value.length;
+    const name = document.querySelector('#nome-interessado').value.length;//so pega o tamanho
     const invalidName = name < 10 || name > 40;
   
-    const reason = document.querySelector('#motivo-ganhar').value.length;
+    const reason = document.querySelector('#motivo-ganhar').value.length;//so pega o tamanho
     const invalidReason = reason > 500;
     if (invalidEmail || invalidName || invalidReason) {
       return false;
