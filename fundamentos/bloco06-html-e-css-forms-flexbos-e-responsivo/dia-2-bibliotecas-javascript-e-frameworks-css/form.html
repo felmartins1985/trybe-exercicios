@@ -9,7 +9,7 @@
 </head>
 <body>
     <header> Formulário </header>
-    <form action="" id="form" method="GET">
+    <form action="" class="js-form" id="form" method="GET">
         <label class="form-label"for="nome-interessado">Nome:</label>
         <input class="form-control" type="text" name="nome" id="nome-interessado" minlength="10" maxlength="40">
         <br>
@@ -31,7 +31,7 @@
         <textarea class="form-control"  name="motivo-ganhar" id="motivo-ganhar" cols="60" rows="10" maxlength="500"></textarea>
         <br>
         <label class="form-label" for="data-viagem">Qual a melhor data para realizar sua viagem?</label>
-        <input class="form-control" type="text" id="data-viagem" data-validate-field="date" value="data">
+        <input class="form-control" type="date" id="data-viagem" data-validate-field="date" value="data">
         <br>
         <label class="form-label" for="ofertas">Gostaria de receber outras incríveis oportunidades 
         oferecidas pela Trybe?</label>
@@ -41,7 +41,7 @@
         na divulgação de concursos futuros.</label>
         <input type="checkbox" id="divulgacao" value="divulgação"> Sim.
         <br>
-        <button  class="btn btn-primary submit-button" type="submit" id="enviar" disabled>Enviar Formulário</button>
+        <button  class="btn btn-success submit-button" type="submit" id="enviar" disabled>Enviar Formulário</button>
         <button class="btn btn-danger clear-button" type="clear" id="limpar"> Limpar Formulário</button>
     </form>
     <script src="moment.js"></script>
