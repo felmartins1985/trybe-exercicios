@@ -35,4 +35,9 @@ p {
     body{
         background-color:lightblue;
     }
+    #head{
+        display: flex;
+        align-items: center;
+        flex-direction:column;
+    }
 }
