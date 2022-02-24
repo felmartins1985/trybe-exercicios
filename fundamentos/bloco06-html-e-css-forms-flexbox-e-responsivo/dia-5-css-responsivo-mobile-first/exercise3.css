@@ -110,4 +110,12 @@ body {
         width: 100%;
         height: 35px;
     }
+    #navigation ul li{
+      flex-basis: 10px;
+      flex-direction: column;
+
+    }
   }
+
+
+  
