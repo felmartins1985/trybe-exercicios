@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+container {
+    display: flex;
+}
+p {
+    padding: 20px;
+}
+@media screen and (max-width: 600px) {
+    body{
+        background-color: grey;
+        font-size: 22px;
+        flex-direction: column;
+    }
+    .container{
+        flex-wrap: wrap;
+        line-height: 54px;
+    }   
+}
+@media screen and (min-width: 600px){
+    body{
+        background-color:red;
+        font-size: 27px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        line-height: 54px;
+    }
+}
+@media screen and (min-width: 1000px){
+    body{
+        background-color:lightblue;
+    }
+}
