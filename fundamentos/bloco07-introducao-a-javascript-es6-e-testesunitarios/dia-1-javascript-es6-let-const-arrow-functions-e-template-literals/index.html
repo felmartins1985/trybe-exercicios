@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-      <span id ="text"></span>
+      <p> Cliques: <span id ="text"></span></p>
     </div>
     <button id="button_test">click aqui!</button>
   </body>
@@ -16,6 +16,7 @@
     let clickCount = 0;
     let textToDisplay = document.getElementById("text");
   
-    let btn=document.getElementById("button_test").addEventListener("click", () => textToDisplay.innerHTML = clickCount += 1);
+    let btn=document.getElementById("button_test").addEventListener("click", () => 
+    textToDisplay.innerHTML = clickCount += 1);
   </script>
 </html>

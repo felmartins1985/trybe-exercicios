@@ -27,7 +27,7 @@ const testingScope=(escopo) => {
     oddsAndEvens[4]=10;
     oddsAndEvens[5]=13;
     return oddsAndEvens;
-    };
+  };
   const sortedArrays=sortOddsAndEvens();
 
   console.log(`os números ${sortedArrays} estão em ordem crescente!`);
@@ -37,28 +37,28 @@ const testingScope=(escopo) => {
 const factorial=(number)=>{
     let result=1;
     for (let i=2; i<=number; i++){
-        result=result*i;
+      result=result*i;
     }
     return result;
 }
 console.log(factorial(5));
 
 // //exercicio 2
-// lembrar que o slipt vai transformar a string em arrays, contendo cada posição uma palavra
+// lembrar que o split vai transformar a string em arrays, contendo cada posição uma palavra
 const longestWord = text => {
-    let wordArray = text.split(' ');
-    let maxLength = 0;
-    let result = '';
-    console.log(wordArray);
+  let wordArray = text.split(' ');
+  let maxLength = 0;
+  let result = '';
+  console.log(wordArray);
 
-    for (const word of wordArray) {
-        if (word.length > maxLength) {
-            maxLength = word.length;
-            result = word;
-        }
+  for (const word of wordArray) {
+    if (word.length > maxLength) {
+      maxLength = word.length;
+      result = word;
     }
+  }
 
-    return result;
+  return result;
 }
 
 console.log(longestWord("Antonio foi no banheiro e não sabemos o que aconteceu"));
