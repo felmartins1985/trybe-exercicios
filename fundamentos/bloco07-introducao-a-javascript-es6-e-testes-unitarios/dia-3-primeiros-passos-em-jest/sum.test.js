@@ -1,4 +1,4 @@
-
+const sum = require('./sum.js');
 describe('testa a função sum', () => {
   const { describe } = require('yargs');
   const sum = require('./sum')
