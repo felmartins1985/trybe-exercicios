@@ -41,3 +41,15 @@ function decode(string) {
 
 const functions = { encode, decode };
 module.exports = functions;
+
+// function decode(string1) {
+//   let palavra1=string1;
+//   let resultado1=palavra1
+//   .replace(/1/gi,"a")
+//   .replace(/2/gi,"e")
+//   .replace(/3/gi,"i")
+//   .replace(/4/gi,"o")
+//   .replace(/5/gi,"u");
+//   return resultado1;
+// }
+// console.log(decode('1'));
