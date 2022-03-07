@@ -4,7 +4,7 @@ const hydrate = (bebidas) => {
   let coposAgua = 0;
   for (let index = 0; index < divBebidas.length; index += 1) {
     const parsedCaracter = parseInt(divBebidas[index]);
-    console.log(parsedCaracter);
+    // console.log(parsedCaracter);
     if (parsedCaracter) {
       coposAgua = coposAgua + parsedCaracter;
     }
