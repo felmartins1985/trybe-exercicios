@@ -60,33 +60,8 @@ const books = [
     releaseYear: 1928,
   },
 ];
-
-// Retorne o nome do livro de menor nome.
-// function smallerName() {
-//   let nameBook;
-//   books.forEach((book) => {
-//     if (nameBook === undefined || book.name.length < nameBook.length) {
-//       nameBook = book.name;
-//     }
-//   })
-//   return nameBook;
-// }
-// console.log(smallerName());
-let smallBook;
-function smallerName(book) {
-  if (smallBook === undefined || smallBook.length > book.name.length) {
-    smallBook = book.name;
-  }
+// Ordene os livros por data de lançamento em ordem decrescente.
+function booksOrderedByReleaseYearDesc() {
+  return books.sort((a,b)=> b.releaseYear -a.releaseYear)
 }
-books.forEach(smallerName);
-console.log(smallBook);
-
-
-// let smallBook;
-//   function smallerName(book) {
-//     if (smallBook === undefined || smallBook.length > book.name.length){
-//       smallBook = book.name
-//     }
-//   }
-//   books.forEach(smallerName);
-//   console.log(smallBook)
+console.log(booksOrderedByReleaseYearDesc());
