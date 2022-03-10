@@ -29,17 +29,15 @@ console.log(divisible)
 Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
 const names = ['João', 'Irene', 'Fernando', 'Maria'];
 
-// const findNameWithFiveLetters = (nome) => {
-//   const name =''
-//   for (let i = 0; i < nome.length; i += 1) {
-//     if (nome[i].length === 5) {
-//       name= nome[i];
-//       return name;
-//     }
-//   }
-// }
-// const number5 = names.find(findNameWithFiveLetters)
-// console.log(number5);
+const findNameWithFiveLetters = (nome) => {
+  if (nome.length === 8) {
+    return nome;
+  }
+}
+
+const number5 = names.find(findNameWithFiveLetters)
+console.log(number5);
+
 const findNameWithFiveLetters = () => {
   return names.find((number) => number.length === 5)
 }
