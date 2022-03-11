@@ -60,13 +60,15 @@ const books = [
     releaseYear: 1928,
   },
 ];
-// - Crie um array em ordem alfabética apenas com os nomes de todas as 
-// pessoas autoras de ficção científica ou fantasia.
+// Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+// const expectedResult = [
+//   'O Senhor dos Anéis',
+//   'Fundação',
+//   'O Chamado de Cthulhu',
+// ];
 
-function fantasyOrScienceFictionAuthors() {
-  return books.filter((book)=> book.genre==='Ficção Científica' || book.genre==='Fantasia')
-  .map((book)=> `${book.author.name}`)
-  .sort()
+function oldBooks() {
+  return books.filter((book) => book.releaseYear < 1962)
+    .map((book) => book.name)
 }
-
-console.log(fantasyOrScienceFictionAuthors());
+console.log(oldBooks());
