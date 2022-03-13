@@ -63,10 +63,11 @@ const books = [
 const expectedResult = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
- return books.filter((book)=>(
-   book.author.name[1]==="."
-   && book.author.name[4]==="."
-   && book.author.name[7]==="."
- ))[0].name
+  return books.filter((book) => (
+    book.author.name[1] === "."
+    && book.author.name[4] === "."
+    && book.author.name[7] === "."
+  ))[0].name
 }
 console.log(authorWith3DotsOnName());
+

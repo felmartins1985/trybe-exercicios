@@ -67,7 +67,7 @@ const books = [
 //   'O Chamado de Cthulhu',
 // ];
 
-function oldBooks() {
+function oldBooks(oi) {
   return books.filter((book) => book.releaseYear < 1962)
     .map((book) => book.name)
 }
