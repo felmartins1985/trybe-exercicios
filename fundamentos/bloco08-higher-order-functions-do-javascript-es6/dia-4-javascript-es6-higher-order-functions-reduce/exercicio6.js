@@ -9,7 +9,9 @@ function studentAverage() {
   const estudanteENotas = estudante.map((elemento, index) => (
     {
       name: elemento,
-      average: notas[index].reduce((acc, item) => acc + item, 0) / notas[index].length
+      average: notas[index].reduce((acc, item) => {
+        return acc + item
+      },0) / notas[index].length
     }))
 return estudanteENotas;
 }

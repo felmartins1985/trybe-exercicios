@@ -63,13 +63,7 @@ const books = [
 
 // const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 // Crie uma string com os nomes de todas as pessoas autoras.
-function reduceNames() {
-  let stringNames = ''
-  return books.reduce((acc, item) => {
-    if (acc !== item.name.author) {
-      stringNames.concat(item.name.author)
-      return stringNames;
-    }
-  }, '')  
+function reduceNames(array) {
+  return array.reduce((acc, item) => `${acc + item.author.name}, `,'')
 }
-console.log(reduceNames());
+console.log(reduceNames(books));
