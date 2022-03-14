@@ -7,7 +7,7 @@ const names = [
 
 function containsA() {
   return names.reduce((acc, item) => {
-    return acc + item.split('').reduce((acc, item) => { //o split só funciona aqui por cada elemento do array é uma string
+    return acc + item.split('').reduce((acc, item) => { //o split só funciona aqui porque cada elemento do array é uma string
       if (item === 'a' || item === 'A') {
         return acc + 1;
       } else {
