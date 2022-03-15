@@ -62,11 +62,11 @@ const books = [
 ];
 // - Encontre o livro com o maior nome.
 function longestNamedBook() {
-  return books.reduce((biggestBook, currentBook) => {
-    if (currentBook.name.length < biggestBook.name.length) {
-      return biggestBook;
+  return books.reduce((acc, item) => {
+    if (acc.name.length < item.name.length) {
+      return item;
     }
-    return currentBook;
+    return acc;
   });
 }
 
