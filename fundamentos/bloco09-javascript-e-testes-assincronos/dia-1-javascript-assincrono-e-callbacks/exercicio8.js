@@ -29,7 +29,7 @@ function getPokemonDetails(filter, callback) {
 
     callback(null, messageFromProfOak);
   }, 2000);
-}
+};
 
 getPokemonDetails((pokemon) => pokemon.name === 'Charmander', (error, message) => {
   if (error) console.log(error); 

@@ -11,5 +11,5 @@ const getPlanet = () => {
   setTimeout(() => console.log("Returned planet: ", mars), 4000);
 };
 //pq nao funciona colocando o settimeout fora?
-// console.log(setTimeout((getPlanet(), 4000))) // imprime Marte depois de 4 segundos
+console.log(setTimeout(getPlanet, 4000)) // imprime Marte depois de 4 segundos
 getPlanet()
