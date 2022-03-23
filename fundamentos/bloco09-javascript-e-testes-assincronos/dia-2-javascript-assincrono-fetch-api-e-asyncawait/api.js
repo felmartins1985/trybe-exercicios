@@ -9,6 +9,7 @@ const fetchCoins = async () => {//assyn tem que ser colocado antes para tornar a
 
   return coins;
 }
+console.log(fetchCoins());
 
 const setCoins = async () => {
   const coins = await fetchCoins();
