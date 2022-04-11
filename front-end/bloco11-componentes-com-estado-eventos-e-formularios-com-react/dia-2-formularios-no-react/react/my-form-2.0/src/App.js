@@ -21,7 +21,7 @@ class App extends React.Component {
       showing: false,
     }
   }
-  changeHandler = event => {
+  changeHandler = (event) => {
     let { name, value } = event.target;
 
     if (name === 'name') value = value.toUpperCase();
@@ -34,7 +34,6 @@ class App extends React.Component {
   }
   onBlurCheck = (e) => {
     let { name } = e.target;
-    console.log(e.target.value)
     if (name === 'city') {
       e.target.value = e.target.value.match(/^\d/) ? '' : e.target.value;
     }
@@ -60,14 +59,12 @@ class App extends React.Component {
           removeSpecial={this.removeSpecial} stateAdress={this.state.adress}
           onMouseEnter={this.onBlurCheck} cityState={this.state.city}
           updateState={this.updateState} brazilState={this.state.brazilState}
-
         />
         <LastJob alertJob={this.alertJob} changeHandler={this.changeHandler} />
         <button onClick={() => this.setState({ showing: true })}> Enviar Formulário</button>
         <div style={{ display: (this.state.showing ? 'block' : 'none') }}>
-          <Button arrayStates={[this.state.name, this.state.email, this.state.cpf, this.state.adress,
-          this.state.city, this.state.brazilState, this.state.house, this.state.curriculum, this.state.job,
-          this.state.jobDescription]} />
+          <Button arrayStates={[this.state.name, this.state.email, this.state.cpf, this.state.adress,this.state.city, this.state.brazilState, this.state.house, this.state.curriculum, this.state.job,this.state.jobDescription]} 
+          />
         </div>
       </div>
     )
