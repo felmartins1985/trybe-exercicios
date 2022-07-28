@@ -24,7 +24,8 @@ const executeFunction = () => {
   console.log('');
   console.log(`Bem vindo ao Script: ${scriptParaExecutar.name}`);
   console.log('------------------------------------------');
-  require(scriptParaExecutar.path);
+  const escolha=require(scriptParaExecutar.path);
+  return escolha;
 }
 
 executeFunction();
