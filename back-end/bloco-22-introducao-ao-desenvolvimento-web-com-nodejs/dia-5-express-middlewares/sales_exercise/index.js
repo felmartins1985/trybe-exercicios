@@ -6,7 +6,7 @@ const validateInfo = require('./middlewares/validateInfo');
 const authMiddleware = require('./middlewares/authMiddleware');
 const crypto = require('crypto');
 const rescue = require('express-rescue');
-
+// require('express-async-errors');
 app.use(bodyParser.json());
 
 app.post('/sales', rescue(authMiddleware),validateProductName,validateInfo,(req, res) => {
