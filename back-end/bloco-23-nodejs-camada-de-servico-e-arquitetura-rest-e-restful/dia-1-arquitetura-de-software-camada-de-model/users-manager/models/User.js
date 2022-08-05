@@ -17,7 +17,7 @@ const serialize = (userData) => ({
     const users = await connection.execute(
       'SELECT * FROM users_crud.users;',
     );
-      return users.map(serialize);;
+      return users.map(serialize);
   };
   const findById = async (id) => {
     const query = 'SELECT * FROM users_crud.users WHERE id = ?'
