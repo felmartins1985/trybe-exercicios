@@ -31,7 +31,7 @@ const createAuthor = async (firstName, middleName, lastName, contacts) => {
     };
   }
   const { id } = await Author.createAuthor(firstName, middleName, lastName);
-
+ 
   await Promise.all(contacts.map((contact) => Contact.createContact(id, contact)));
 
   return ({ id, firstName, middleName, lastName, contacts });

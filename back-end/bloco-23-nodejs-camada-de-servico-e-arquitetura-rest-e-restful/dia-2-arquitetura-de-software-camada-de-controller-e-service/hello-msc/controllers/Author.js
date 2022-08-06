@@ -1,7 +1,7 @@
 // controllers/Authors.js
 const Joi = require('joi');
 const Author = require('../services/Authors');
-
+ 
 const getAll = async (_req, res) => {
   const authors = await Author.getAll();
 

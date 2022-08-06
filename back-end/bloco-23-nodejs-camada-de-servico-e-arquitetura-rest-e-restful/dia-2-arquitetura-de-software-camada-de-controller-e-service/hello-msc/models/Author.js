@@ -40,7 +40,7 @@ const findById = async (id) => {
 
 const createAuthor = async (firstName, middleName, lastName) => {
   const [author] = await connection.execute(
-    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
+    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
     [firstName, middleName, lastName],
   );
   return ({ id: author.insertId, firstName, middleName, lastName });
