@@ -2,7 +2,7 @@
 
 const rescue = require('express-rescue');
 const service = require('../services/Cep');
-const Joi = require('joi');
+// const Joi = require('joi');
 
 const findAddressByCep = rescue(async (req, res, next) => {
   const { cep } = req.params;
