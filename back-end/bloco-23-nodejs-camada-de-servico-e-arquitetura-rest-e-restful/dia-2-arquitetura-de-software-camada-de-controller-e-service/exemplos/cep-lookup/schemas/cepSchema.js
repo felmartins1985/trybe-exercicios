@@ -1,6 +1,6 @@
 const Service= require('../services/CepService');
 const CEP_REGEX = /^\d{5}-?\d{3}$/;
-const validateCep= (cep)=>{
+const validateFindCep= (cep)=>{
   if(!CEP_REGEX.test(cep)){
     return {
       code: 400,
@@ -15,17 +15,18 @@ const validateCep= (cep)=>{
   }
   return {};  
 }
-const verifyCep = ({ cep, logradouro, bairro, localidade, uf })=>{ // 409 201
-  const existingCep= Service.findAdressByCep(cep);
+const verifyCreateCep = async (cep)=>{
+  const existingCep= await Service.findAdressByCep(cep);
+  // console.log(existingCep,"schema");
   if(existingCep){
     return {
       code: 409,
       message: 'CEP já existe'
     }
   }
-  return {};
+  return existingCep;
 }
 module.exports={
-  validateCep,
-  verifyCep,
+  validateFindCep,
+  verifyCreateCep,
 }

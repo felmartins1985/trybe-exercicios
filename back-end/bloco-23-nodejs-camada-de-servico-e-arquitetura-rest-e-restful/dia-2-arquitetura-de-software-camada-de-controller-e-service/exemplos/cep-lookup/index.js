@@ -6,19 +6,18 @@ const express = require('express');
 
 // Criamos a aplicação do express
 const app = express();
-
+app.use(express.json());
 // Registramos o endpoint `GET /ping`
 app.get('/ping', (req, res) => {
   res.status(200).json({ message: 'pong!' });
 });
 //
-const routerCepGet=require('../controllers/CepControllersGet');
-app.use('/cep', routerCepGet);
+const routerCepGet=require('./controllers/CepController');
+app.use('/cep', routerCepGet.router);
 //
-const routerCepPost=require('../controllers/CepControllerPost');
-app.get('/', routerCepPost);
-//
-app.use(require('./middleware/ErrorMiddleware'));
+
+const Error=require('./middleware/ErrorMiddleware');
+app.use(Error.error);
 // Lemos a porta da variável de ambiente, ou usamos 3000
 const PORT = process.env.PORT || 3000;
 

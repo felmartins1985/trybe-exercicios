@@ -10,7 +10,7 @@ const CEP_REGEX = /^\d{5}-\d{3}$/;
 const formatCep = (cep) => {
   // Caso o CEP já esteja formatado, retorna o próprio CEP
   if (CEP_REGEX.test(cep)) return cep;
-
+  // console.log(cep);
   // Caso não esteja formatado, utiliza regex para adicionar a formatação
   return cep.replace(/(\d{5})(\d{3})/, '$1-$2');
 };
@@ -24,20 +24,14 @@ const formatCep = (cep) => {
 //   uf});
 
 const findAddressByCep = async (cepToSearch) => {
-  // Removemos todos os traços, pois armazenamos o CEP
-  // puro no banco
   const treatedCep = cepToSearch.replace('-', '');
-
   const query = 'SELECT cep, logradouro, bairro, localidade, uf FROM ceps WHERE cep = ?';
-
-  // Executamos a query, selecionando o primeiro resultado, caso exista
-  // e assumindo `null`, caso contrário
-  const result = await connection.execute(query, [treatedCep])
-    // .then(([results]) => (results.length ? results[0] : null));
+  const [result] = await connection.execute(query, [treatedCep])
+  console.log(treatedCep,result);
   if (result.length===0 || !result) {
   // Caso nenhum resultado seja encontrado, retornamos `null`
   return null
-};
+  };
   const { cep, logradouro, bairro, localidade, uf } = result[0];
 
   return {
@@ -49,19 +43,19 @@ const findAddressByCep = async (cepToSearch) => {
   };
 };
 //
-const create = async ({ cep: modifyCep, logradouro, bairro, localidade, uf }) => {
+const create = async ({ cep, logradouro, bairro, localidade, uf }) => {
   // Removemos o traço do CEP para armazená-lo de forma limpa
-  const cep = modifyCep.replace(/-/ig, '');
+  const modifyCep = cep.replace(/-/ig, '');
 
   const query = `
     INSERT INTO ceps (cep, logradouro, bairro, localidade, uf)
     VALUES (?, ?, ?, ?, ?)`;
 
   // Executamos a query
-  await connection.execute(query, [cep, logradouro, bairro, localidade, uf]);
+  await connection.execute(query, [modifyCep, logradouro, bairro, localidade, uf]);
 
   // Depois de inserir, retornamos os dados, como sinal de que foram guardados no banco
-  return { cep, logradouro, bairro, localidade, uf };
+  return { modifyCep, logradouro, bairro, localidade, uf };
 };
 //
 module.exports = {
