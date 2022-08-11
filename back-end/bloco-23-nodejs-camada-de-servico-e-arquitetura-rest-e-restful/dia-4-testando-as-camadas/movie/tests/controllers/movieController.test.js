@@ -60,7 +60,7 @@ describe('Ao chamar o controller de create', () => {
       response.send = sinon.stub()
         .returns();
       sinon.stub(MoviesService, 'create')
-        .resolves(true);
+        .resolves({id: 1});
     })
     after(() => {
       MoviesService.create.restore();
@@ -79,3 +79,52 @@ describe('Ao chamar o controller de create', () => {
 
   });
 });
+describe('Ao utilizar o findById', () => {
+  describe('quando nada foi encontrado no BD', () => {
+    const response={};
+    const request={};
+    before(async()=>{
+      request.params={id:1}; // serve so o numero ou tenho que passar a chave?
+      response.status=sinon.stub().returns(response);
+      response.json=sinon.stub().returns();
+      sinon.stub(MoviesService, 'findById').resolves(null);
+    })
+    after(async()=>{
+      MoviesService.findById.restore();
+    })
+    it('é chamado o status com o código 404', async () => {
+      await MoviesController.findById(request, response)
+      expect(response.status.calledWith(404)).to.be.equal(true);
+    })
+    it('o json vem com a resposta "Not Found"', async () => {
+      await MoviesController.findById(request, response)
+      expect(response.json.calledWith('Not Found')).to.be.equal(true);
+    })
+  })
+  describe('quando existe algum filme no BD',()=>{
+    const response={};
+    const request={};
+    const payload={
+      id: 1,
+      title: 'Example Movie',
+      directedBy: 'Jane Dow',
+      releaseYear: 1999,
+    }; 
+  before(async()=>{
+    request.params={id:1}; // serve so o numero ou tenho que passar a chave?
+    response.status=sinon.stub().returns(response);
+    response.json=sinon.stub().returns();
+    sinon.stub(MoviesService, 'findById').resolves(payload);
+  })
+  after(async()=>{
+    MoviesService.findById.restore();
+  })
+  it('é chamado o status com o código 200', async () => {
+    await MoviesController.findById(request, response);  
+    expect(response.status.calledWith(200)).to.be.equal(true);
+  })
+  it('é chamado o metodo json com um  objeto', async () =>{
+    await MoviesController.findById(request, response);
+    expect(response.json.calledWith(sinon.match.object)).to.be.equal(true);
+  })
+})});

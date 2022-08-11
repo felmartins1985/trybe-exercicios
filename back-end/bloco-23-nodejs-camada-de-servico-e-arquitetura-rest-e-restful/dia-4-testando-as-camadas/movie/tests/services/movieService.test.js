@@ -33,7 +33,7 @@ describe('Insere um novo filme no BD', () => {
     };
     before(() => {
       const ID_EXAMPLE = 1;
-
+  
       sinon.stub(MoviesModel, 'create')
         .resolves({ id: ID_EXAMPLE });
     });
@@ -57,3 +57,44 @@ describe('Insere um novo filme no BD', () => {
 
   });
 });
+
+describe('buscar um filme pelo ID',()=>{
+  describe('quando o ID não é informado',()=>{
+    before(async()=>{
+      sinon.stub(MoviesModel, 'getById').resolves()
+    })
+    after(async()=>{
+      MoviesModel.getById.restore();
+    })
+    it('retorna null', async()=>{
+      const response= await MoviesService.findById();
+      expect(response).to.be.equal(null);
+    })
+  })
+  describe('quando o Id é informado',()=>{
+    const payload={
+      id: 1,
+      title: 'Example Movie',
+      directedBy: 'Jane Dow',
+      releaseYear: 1999,
+    }
+    before(async()=>{
+      sinon.stub(MoviesModel, 'getById').resolves(payload)
+    })
+    after(async()=>{
+      MoviesModel.getById.restore();
+    })
+    it('retorna um objeto', async()=>{
+      const response= await MoviesService.findById(1);
+      expect(response).to.be.an('object');
+    })
+    it('o objeto nao esta vazio', async()=>{
+      const response= await MoviesService.findById(1);
+      expect(response).to.not.be.empty;
+    })
+    it('tal objeto possui as propriedades: "id", "title", "releaseYear" e "directedBy"', async()=>{
+      const response= await MoviesService.findById(1);
+      expect(response).to.include.all.keys('id','title','releaseYear','directedBy');
+    })
+  })
+})
