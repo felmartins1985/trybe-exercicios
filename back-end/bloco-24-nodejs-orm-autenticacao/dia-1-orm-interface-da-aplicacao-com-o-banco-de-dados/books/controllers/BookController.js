@@ -13,15 +13,15 @@ const getById = async (req, res)=>{
     res.status(200).json(book);
 }
 const createBook= async (req, res)=>{
-    const {title, author, pageQuantity}=req.body;
-    const book = await BookService.createBook({title, author, pageQuantity});
+    const {title, author, pageQuantity, publisher}=req.body;
+    const book = await BookService.createBook({title, author, pageQuantity, publisher});
     res.status(201).json(book);
 }
 
 const updateBook= async (req, res)=>{
     const {id}= req.params;
-    const {title, author, pageQuantity}=req.body;
-    const book = await BookService.updateBook(id,{title, author, pageQuantity});
+    const {title, author, pageQuantity, publisher}=req.body;
+    const book = await BookService.updateBook(id,{title, author, pageQuantity, publisher});
     if(!book){
         res.status(404).json({"message":'Book not found'});
     }
@@ -34,4 +34,13 @@ const deleteBook = async (req, res)=>{
 
     res.status(200).json({ message: 'Book removed' });
   };
-module.exports = {getAll, getById, createBook, updateBook, deleteBook};
+const getByAuthor = async (req, res)=>{
+    const {author}=req.query;
+    if (!author){
+        const books= await BookService.getAll();
+        res.status(200).json(books);
+    }
+    const books = await BookService.getByAuthor(author);
+    res.status(200).json(books);
+}
+module.exports = {getAll, getById, createBook, updateBook, deleteBook, getByAuthor};

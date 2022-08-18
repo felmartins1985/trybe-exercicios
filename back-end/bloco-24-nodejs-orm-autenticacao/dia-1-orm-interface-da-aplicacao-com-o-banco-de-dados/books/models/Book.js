@@ -5,7 +5,8 @@ const Book = (sequelize, DataTypes) => {
     author: DataTypes.STRING,
     pageQuantity: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE, 
+    updatedAt: DataTypes.DATE,
+    publisher: DataTypes.STRING, 
   },
 );
 
