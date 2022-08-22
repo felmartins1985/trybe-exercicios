@@ -12,9 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   });
 
+  // Employee.associate = (models) => {
+  //   Employee.hasOne(models.Address,
+  //     { foreignKey: 'employeeId', as: 'addresses' });
+  // };
   Employee.associate = (models) => {
-    Employee.hasOne(models.Address,
-      { foreignKey: 'employeeId', as: 'addresses' });
+    Employee.hasMany(models.Address,
+      { foreignKey: 'employeeId', as: 'addresses' });// <-- vem como um array de objetos
   };
 
   return Employee;
