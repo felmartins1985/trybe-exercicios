@@ -1,0 +1,19 @@
+{
+  "name": "aula-exercicios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:car": "npx tsc && node dist/index.js",
+    "start:pizza": "npx tsc && node dist/Pizza.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.7.16",
+    "typescript": "^4.8.3"
+  }
+}
