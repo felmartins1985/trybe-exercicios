@@ -41,13 +41,13 @@ public async update(id: number, book: Book) {
   await this.connection.execute(
     'UPDATE books SET title=?, price=?, author=?, isbn=? WHERE id=?',
     [title, price, author, isbn, id]
-  );
+  ); //<-- nao preciso retornar nada?
   }
 /////////////////////
   public async remove(id: number) {
   await this.connection.execute(
     'DELETE FROM books WHERE id=?',
-    [id],
+    [id],// nao preciso retornar nada?
   );
   }
 }
