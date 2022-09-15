@@ -4,7 +4,7 @@ const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 function validateData(author, category, publicationDate) {
     // verifica se o nome do autor e o nome da categoria têm pelo menos 3 caracteres cada
     if (author.length < 3
-        || category.length < 3) {
+        || category.length < 3) { 
         const message = 'Author name and category name must be string and have at least 3 characters';
         return { status: 400, message };
     }
