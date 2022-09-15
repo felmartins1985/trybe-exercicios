@@ -41,7 +41,7 @@ const p4 = new Person1('João', 175, 66, 18);
 // Alteração direta de variável pública
 p3.name = 'Mariah';
 // Acesso direto a variável pública
-console.log(p1.name);
+console.log(p3.name);
 // Acesso a método público que manipula atributo privado
 console.log(p3.getWeight());
 // Acesso a método com getter para manipular atributo privado como se fosse público
