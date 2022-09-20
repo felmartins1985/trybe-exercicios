@@ -13,6 +13,7 @@ export default class OrderRepository{
   }
   listByCliente(client: Person): Order[]{
     const list= this._orders.filter((item)=> item.client===client);
+    console.log(list,'<--')
     return list;
   }
   listBySortedValue(sort: string): Order[] {

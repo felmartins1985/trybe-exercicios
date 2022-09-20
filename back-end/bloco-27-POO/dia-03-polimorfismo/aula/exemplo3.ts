@@ -1,11 +1,8 @@
-/*
-Dicionário en-pt:
-- fish: peixe
-*/
+
 abstract class Animal3 {
   constructor(public name: string) { }
-  abstract move(): void // perceba que a funcao esta abstrata. Sempre eu tenho que colocar
-// abstract antes da funcao dentro de classa abstrata?
+  abstract move(): void // perceba que a funcao esta abstrata.
+//
 }
 class Bird3 extends Animal3 {
   move() { 
