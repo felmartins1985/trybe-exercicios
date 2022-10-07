@@ -1,0 +1,7 @@
+use ('felipe')
+// db.products.insertOne({"_id":100, "productName": "Caixa", "price": 20})
+db.product.insertOne({'productName': "Qualquer", 'price':30})
+db.product.insertOne({'productName': "Qq", 'price':13})
+
+use('felipe')
+db.product.find()
