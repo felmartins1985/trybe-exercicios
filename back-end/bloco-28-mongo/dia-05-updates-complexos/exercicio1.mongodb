@@ -1,0 +1,173 @@
+use ('cinema');
+db.movies.drop();
+db.movies.insertMany([
+  {
+    title: "Batman",
+    category: [
+      "action",
+      "adventure",
+    ],
+    imdbRating: 7.7,
+    budget: 35,
+  },
+  {
+    title: "Godzilla",
+    category: [
+      "action",
+      "adventure",
+      "sci-fi",
+    ],
+    imdbRating: 6.6,
+    budget: 1,
+  },
+  {
+    title: "Home Alone",
+    category: [
+      "family",
+      "comedy",
+    ],
+    imdbRating: 7.4,
+  },
+]);
+use ('cinema');
+db.movies.find();
+use ('cinema'); //01
+db.movies.updateOne({
+  title:'Batman'
+},{
+  $push:{
+    category:'superhero'
+  }
+})
+db.movies.find();
+use ('cinema'); //02
+db.movies.updateOne({
+  title:'Batman'
+},{
+  $push:{
+    category:{
+      $each: ['vilain', 'comic-based'] --> nao posso esquecer do array
+    }
+  }
+})
+db.movies.find();
+use ('cinema');//03
+db.movies.updateOne({
+  title:'Batman'
+},{
+  $pop:{category: -1}
+})
+db.movies.find();
+use ('cinema'); //04
+db.movies.updateOne({
+  title:'Batman'
+},{
+  $pull:{
+    category: 'adventure'
+  }
+})
+db.movies.find();
+use ('cinema'); //05
+db.movies.updateOne({
+  title:'Batman'
+},{
+  $pop:{category: 1}
+})
+db.movies.find();
+use ('cinema'); //06
+db.movies.updateOne({
+  title:'Batman'
+},{
+  $addToSet:{category: 'action'}
+})
+db.movies.find();
+use ('cinema');//07
+db.movies.updateMany({
+  title:{$in:['Batman','Home Alone']}
+},{
+  $push:{category: '90s'}
+})
+db.movies.find();
+use ('cinema');//08
+db.movies.updateOne({
+  title:'Home Alone'
+},{
+  $push:{
+    cast:{
+      $each: [
+        {actor:'Macaulay Culkin', character:'Kevin'},
+        {actor:'Joe Pesci', character:'Harry'},
+        {actor:'Daniel Stern', character:'Marv'}
+      ]
+    }
+  }
+})
+db.movies.find();
+use ('cinema'); //09
+db.movies.updateOne({
+  title:'Home Alone',
+  'cast.actor': 'Daniel Stern'
+},{
+  $set:{
+    'cast.$.character': 'Marv the robber'
+  }
+})
+db.movies.find();
+use ('cinema');//10
+db.movies.updateOne({
+  title: 'Batman'
+},{
+  $push:{
+    cast:{
+      $each:[
+        {character:'Batman'},
+        {character:'Alfred'},
+        {character:'Joker'}
+      ]
+    }
+  }
+})
+db.movies.find();
+use ('cinema');//11
+db.movies.updateOne({
+  title:'Batman',
+  'cast.character':'Batman'
+},{
+  $push:{'cast.$.actor':'Christian Bale'}
+  },
+)
+db.movies.find();
+use ('cinema'); //11
+db.movies.updateOne({
+  title:'Batman',
+  'cast.character':'Alfred'
+},{
+  $push:{'cast.$.actor':'Michael Caine'}
+})
+db.movies.find();
+use ('cinema');//11
+db.movies.updateOne({
+  title:'Batman',
+  'cast.character':'Joker'
+},{
+  $push:{'cast.$.actor':'Heath Ledger'}
+})
+db.movies.find();
+use ('cinema');//12
+
+use ('cinema'); //12
+use ('cinema'); //12
+db.movies.updateOne({
+  title:'Batman',
+  'cast.character':'Batman'
+},{
+  $push:{
+    'cast.$.actor':{
+      $each:['Michael Keaton', 'Val Kilmer','George Clooney'],
+      $sort:1
+    }
+  }
+})
+db.movies.find();
+use ('cinema');
+use ('cinema');
