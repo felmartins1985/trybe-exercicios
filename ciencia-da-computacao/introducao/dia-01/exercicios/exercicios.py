@@ -74,3 +74,65 @@ def triangulo(l1, l2, l3):
 
 
 print(triangulo(1, 3, 5))
+
+
+def numero(*numeros):
+    menorNumero = numeros[0]
+    for n in numeros:
+        if n < menorNumero:
+            menorNumero = n
+    return menorNumero
+
+
+print(numero(1, 2, 3))
+
+
+def soma(numero):
+    total = 0
+    for n in range(total, numero + 1):
+        total = total + n
+    return total
+
+
+print(soma(5))
+
+
+# Escreva uma função que receba o número de litros vendidos, o tipo de
+# combustível (codificado da seguinte forma: A - álcool, G - gasolina),
+#  e retorne o valor a ser pago pelo cliente, sabendo-se que o preço do
+# litro da gasolina é R$ 2,50, e o preço do litro do álcool é R$ 1,90.
+
+
+def combustivel(tipo, litros):
+    if tipo == "Alcool":
+        if litros <= 20:
+            return litros * 1.90 * 0.97
+        else:
+            return litros * 1.90 * 0.95
+    elif tipo == "Gasolina":
+        if litros <= 20:
+            return litros * 2.50 * 0.96
+        else:
+            return litros * 2.50 * 0.94
+
+
+print(combustivel("Alcool", 20))
+
+
+def fuel_price(type, liters):
+    if type == "A":
+        price = 1.90
+        discount = 0.03
+        if liters > 20:
+            discount = 0.05
+    elif type == "G":
+        price = 2.50
+        discount = 0.04
+        if liters > 20:
+            discount = 0.06
+    total = price * liters
+    total -= total * discount
+    return total
+
+
+print(fuel_price("A", 20))
