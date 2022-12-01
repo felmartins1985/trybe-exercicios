@@ -30,7 +30,6 @@ def write_csv_report(file, header, rows):
 
 
 if __name__ == "__main__":
-    # retrieve books
     with open("books.json") as file:
         books = retrieve_books(file)
 
@@ -47,3 +46,4 @@ if __name__ == "__main__":
     header = ["categoria", "percentagem"]
     with open("report.csv", "w") as file:
         write_csv_report(file, header, books_percentage_rows)
+    # retrieve books

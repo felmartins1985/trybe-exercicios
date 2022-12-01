@@ -10,3 +10,7 @@ for n in numerosSeparados:
         print("Você digitou um número inválido")
     soma = soma + int(n)
 print(f"A soma deu {soma}")
+
+print("Na mesma", end=" ")
+print("linha", end=" ")
+print("do que escreve.")
