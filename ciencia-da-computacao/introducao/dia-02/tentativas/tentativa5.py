@@ -17,10 +17,10 @@ def contar_livros_por_categoria(livros):
 
 
 def calcular_percentagem_por_categoria(livros_por_categoria, total_livros):
-    return [
-        [categoria, numero_livros / total_livros]
-        for categoria, numero_livros in livros_por_categoria.items()
-    ]
+    conjunt = []
+    for categoria, numero_livros in livros_por_categoria.items():
+        conjunt.append([categoria, numero_livros / total_livros])
+    return conjunt
 
 
 def escrever_relatorio_csv(arquivo, cabecalho, linhas):
