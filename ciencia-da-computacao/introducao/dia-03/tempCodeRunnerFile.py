@@ -1,0 +1,1 @@
+def verificar_numeros(*numeros):
