@@ -1,28 +1,26 @@
-class Classe:
-    _atributo_da_classe = 1
+class TV:
+    def __init__(self, _tamanho):
+        self._volume = 50
+        self._canal = 1
+        self._tamanho = _tamanho
+        self._ligada = False
 
-    @classmethod
-    def seta_atributo_da_classe(cls, valor):
-        cls._atributo_da_classe = valor
+    def aumentar_volume(self):
+        if self._volume < 99:
+            self._volume += 1
 
-    @classmethod
-    def retorna_atributo_da_classe(cls):
-        return cls._atributo_da_classe
+    def diminuir_volume(self):
+        if self._volume > 0:
+            self._volume -= 1
+
+    def modificar_canal(self, canal):
+        if not self.canal < canal < 100:
+            raise ValueError("Canal inválido")
+        self._canal = canal
+
+    def ligar_desligar(self):
+        self._ligada = not self._ligada
 
 
-objeto_1 = Classe()
-objeto_2 = Classe()
-
-print(Classe.retorna_atributo_da_classe())  # Saída: 1
-print(objeto_1.retorna_atributo_da_classe())  # Saída: 1
-print(objeto_2.retorna_atributo_da_classe())  # Saída: 1
-
-Classe.seta_atributo_da_classe(2)
-print(Classe.retorna_atributo_da_classe())  # Saída: 2
-print(objeto_1.retorna_atributo_da_classe())  # Saída: 2
-print(objeto_2.retorna_atributo_da_classe())  # Saída: 2
-
-objeto_1.seta_atributo_da_classe(3)
-print(Classe.retorna_atributo_da_classe())  # Saída: 3
-print(objeto_1.retorna_atributo_da_classe())  # Saída: 3
-print(objeto_2.retorna_atributo_da_classe())  # Saída: 3
+LG = TV(50)
+print(LG.aumentar_volume())
