@@ -39,3 +39,8 @@ class BaralhoIterator(Iterator):
         carta = self.cartas[self.index]
         self.index += 1
         return carta
+
+
+print(Baralho())
+baralho = Baralho()
+print(baralho._cartas)
