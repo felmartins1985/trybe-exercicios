@@ -42,7 +42,7 @@ class LogSucess:
         return f"{VERDE}{self.log.dispara_log(message)}{RESET}"
 
 
-logger = Log()
+logger = Log
 print(LogSucess(logger).dispara_log("O sistema esta funcionando"))
 print(LogWarning(logger).dispara_log("O sistema esta lento"))
 print(LogError(logger).dispara_log("O sistema esta com erros"))
