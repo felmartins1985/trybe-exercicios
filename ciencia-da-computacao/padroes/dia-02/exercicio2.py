@@ -34,11 +34,13 @@ class BaralhoIterator(Iterator):
         self.index = 0
 
     def __next__(self):
-        if self.index >= len(self.cartas):
-            raise StopIteration
-        carta = self.cartas[self.index]
-        self.index += 1
-        return carta
+        try:
+            carta = self.cartas[self.index]
+        except IndexError:
+            raise StopIteration()
+        else:
+            self.index += 1
+            return carta
 
 
 # baralho = Baralho()
@@ -48,20 +50,23 @@ class BaralhoIterator(Iterator):
 class IteradorBaralhoInverso(Iterator):
     def __init__(self, cartas):
         self.cartas = cartas
-        self.index = 0
+        self.index = -1
 
     def __next__(self):
-        if self.index >= len(self.cartas):
-            raise StopIteration
-        carta = self.cartas[self.index]
-        self.index += 1
-        return carta
+        try:
+            carta = self.cartas[self.index]
+        except IndexError:
+            raise StopIteration()
+        else:
+            self.index -= 1
+            return carta
 
 
 class BaralhoInverso(Baralho):
     def __iter__(self):
-        return IteradorBaralhoInverso(self.baralho._cartas)
+        return IteradorBaralhoInverso(self._cartas)
 
 
 baralho_inverso = BaralhoInverso()
-print(baralho_inverso._cartas)
+for carta in baralho_inverso:
+    print(carta)

@@ -28,7 +28,6 @@ class SvgImage:
 class SVGAdapter(ImageInterface):
     def __init__(self, svg):
         self.svg = svg
-        self.format = "vector"
 
     def draw(self):
         print(f" Drawing {self.svg.get_image()}")

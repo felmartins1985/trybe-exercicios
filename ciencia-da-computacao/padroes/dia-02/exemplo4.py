@@ -3,5 +3,5 @@ print(lista)
 
 iteracao = iter(lista)
 
-for lis in lista:
-    print(next(iter(lis)))
+for it in iteracao:
+    print(next(it))
