@@ -4,7 +4,8 @@ from abc import ABC, abstractmethod
 class Item(ABC):
     @abstractmethod
     def __repr__(self):
-        # __repr__ é o método que o Python chama quando realizamos um print() do objeto
+        # __repr__ é o método que o Python chama quando
+        # realizamos um print() do objeto
         pass
 
 
@@ -74,11 +75,14 @@ class ComboFritas(Combo):
 
 if __name__ == "__main__":
     combo_escolhido = input(
-        "Olá, qual seu pedido? [ComboTudo, ComboFeliz, ComboGelado, ComboFritas]: "
+        """
+        "Olá, qual seu pedido?
+        [ComboTudo, ComboFeliz, ComboGelado, ComboFritas]: "
+        """
     )
 
-    # Para transformar uma string em código executável basta usar o método eval()
-    # Equivalente a chamar ComboTudo(), ComboFeliz(), ComboGelado()
+# Para transformar uma string em código executável basta usar o método eval()
+# Equivalente a chamar ComboTudo(), ComboFeliz(), ComboGelado()
     combo = eval(combo_escolhido)()
 
     print(f"\nCriando o combo {type(combo).__name__}.")

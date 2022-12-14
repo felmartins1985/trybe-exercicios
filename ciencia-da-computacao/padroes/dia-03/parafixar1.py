@@ -24,7 +24,8 @@ class CalculadoraDecoradaIngles:
             "ten": 10,
         }.get(numero)
 
-    # o get vai pegar esse dicionario e vai retornar o valor da chave que for passada
+        # o get vai pegar esse dicionario e vai
+        # retornar o valor da chave que for passada
 
     def soma(self, x, y):
         return self.calculadora.soma(
