@@ -27,6 +27,9 @@ class Perfil:
     def mostrar_post(self):
         print(f"\nPost: {self.__new_post}\n")
 
+    def __str__(self) -> str:
+        print(f"Sistemas de notificação: {self.__sistemas_de_notificacao}\n")
+
 
 # Interface Observer
 class Notificador(ABC):
@@ -78,6 +81,5 @@ if __name__ == "__main__":
     NotificadorMensagem(meuPerfil, seguidores_mensagem)
     NotificadorPushNotification(meuPerfil, seguidores_push_notification)
     NotificadorEmail(meuPerfil, seguidores_email)
-    meuPerfil.remover_sistema_de_notificacao(NotificadorEmail)
+    # meuPerfil.remover_sistema_de_notificacao(NotificadorEmail)
     meuPerfil.adicionar_post("Olá universo da programação!")
-    print(meuPerfil._Perfil__sistemas_de_notificacao)

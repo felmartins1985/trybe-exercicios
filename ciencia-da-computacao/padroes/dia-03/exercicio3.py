@@ -14,6 +14,7 @@ class SystemAccess(ABC):
 class SupportSystemAccess(SystemAccess):
     def __init__(self, can_access=False):
         self.name = "Suport"
+        # self.can_access = can_access
         self.set_permission(can_access)  # <--
 
     def set_permission(self, can_access):
@@ -42,7 +43,7 @@ class Account(ABC):
     def __init__(self, username):
         self.username = username
         self.permissions = []
-        self.create_account()  # pq?
+        self.create_account()
 
     @abstractmethod
     def create_account():

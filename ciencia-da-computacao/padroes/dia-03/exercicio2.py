@@ -13,6 +13,9 @@ class Alarme:
         print("Alarme disparado! Acordando...")
         self.acionar_tarefas()
 
+    def __str__(self) -> str:
+        return f"Tarefas: {self.__tarefas}\n"
+
 
 # Interface Observer
 class AcenderLuzes:
@@ -47,3 +50,4 @@ acender_luzes = AcenderLuzes(alarme_casa)
 preparar_cafe = PrepararCafe(alarme_casa)
 ligar_computador = LigarComputador(alarme_casa)
 alarme_casa.despertar()
+print(alarme_casa)

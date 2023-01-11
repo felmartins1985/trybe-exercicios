@@ -1,1 +1,1 @@
-alarme_casa.despertar()
+    # meuPerfil.remover_sistema_de_notificacao(NotificadorEmail)
