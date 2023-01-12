@@ -17,7 +17,9 @@ response = requests.post("http://httpbin.org/post", data="some content")
 print(response.text)
 
 # Requisição enviando cabeçalho (header)
-response = requests.get("http://httpbin.org/get", headers={"Accept": "application/json"})
+response = requests.get(
+    "http://httpbin.org/get", headers={"Accept": "application/json"}
+)
 print(response.text)
 
 # Requisição a recurso binário
@@ -29,6 +31,7 @@ response = requests.get("http://httpbin.org/get")
 # Equivalente ao json.loads(response.content)
 print(response.json())
 
-# Podemos também pedir que a resposta lance uma exceção caso o status não seja OK
+# Podemos também pedir que a resposta lance uma exceção caso o status
+# não seja OK
 response = requests.get("http://httpbin.org/status/404")
 response.raise_for_status()

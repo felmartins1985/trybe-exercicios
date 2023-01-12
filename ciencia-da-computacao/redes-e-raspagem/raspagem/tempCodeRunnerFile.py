@@ -1,1 +1,3 @@
-    next_page_url = selector.css(".next a::attr(href)").get()
+for user in users_json:
+#     print(user["login"])
+#     print(user["url"])
