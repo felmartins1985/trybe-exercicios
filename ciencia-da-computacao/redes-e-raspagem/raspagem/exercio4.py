@@ -21,5 +21,7 @@ if description.endswith(suffix):
 url_image = selector.css(".thumbnail img::attr(src)").get()
 url_total = url_base + url_image
 # print(url_total)
+available = selector.css(".product_main .availability::text").re_first(r"\d")
+# print(available)
 
-print(title, price, description, url_total, sep=",")
+print(title, price, description, url_total, available, sep=",")
