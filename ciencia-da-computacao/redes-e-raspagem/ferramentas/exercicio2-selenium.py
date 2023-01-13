@@ -21,6 +21,7 @@ def scrape(url):
         print(quote.text)
 
 
+# porquê não funciona com o get_attribute("innerHTML")?
 scrape(
     "https://www.wikimetal.com.br/scream-for-me-wikibrother-retrospectiva-2022-o-que-vem-em-2023/"
 )
