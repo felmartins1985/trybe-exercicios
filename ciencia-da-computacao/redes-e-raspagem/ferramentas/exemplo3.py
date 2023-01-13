@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 firefox = webdriver.Firefox()
 
-
+ 
 # Define a função que fará o scrape da URL recebida
 def scrape(url):
     firefox.get(url)
