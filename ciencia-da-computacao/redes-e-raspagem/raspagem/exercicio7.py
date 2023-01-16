@@ -2,7 +2,7 @@ from pymongo import MongoClient
 
 
 with MongoClient() as client:
-    db = client.library
+    db = client.local
     pipelines = [
         {"$match": {"status": "PUBLISH"}},
         {"$unwind": "$categories"},
