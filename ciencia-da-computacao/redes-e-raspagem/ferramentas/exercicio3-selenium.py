@@ -20,9 +20,6 @@ def scrape(url):
             .find_element(By.TAG_NAME, "a")
             .get_attribute("href")
         )
-        # new_item["excerpt"] = post.find_element(
-        #     By.CLASS_NAME, "entry-excerpt"
-        # ).get_attribute("innerHTML")
         posts.append(new_item)
     return posts
 

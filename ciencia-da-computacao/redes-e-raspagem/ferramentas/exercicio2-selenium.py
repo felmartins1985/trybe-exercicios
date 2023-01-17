@@ -18,7 +18,7 @@ def scrape(url):
     quotes = firefox.find_elements(By.TAG_NAME, "p")
 
     for quote in quotes:
-        print(quote.text)
+        print(quote.get_attribute("innerHTML"))
 
 
 # porquê não funciona com o get_attribute("innerHTML")?
