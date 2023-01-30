@@ -1,3 +1,1 @@
-
-
-print(array)
+    print(servers_in_rows, servers_in_columns)
