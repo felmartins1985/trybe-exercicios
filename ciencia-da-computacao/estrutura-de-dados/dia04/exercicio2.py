@@ -21,7 +21,16 @@ class Stack:
     def peek(self):
         if self.is_empty():
             return None
-        return self._data.get_element_at(len(self._data)-1)
+        return self._data.get_element_at(len(self._data) - 1)
+
+    def min_value(self):
+        if self.is_empty():
+            return None
+        min_value = self._data[0]
+        for element in range(len(self._data)):
+            if self._data[element] < min_value:
+                min_value = self._data[element]
+        return min_value
 
     def __str__(self):
         str_items = ""
