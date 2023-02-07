@@ -6,10 +6,13 @@ def reverse_word(stack):
     reversed_word = []
     while char != "(":
         char = stack.pop()
+        # print(char)
         if char != "(":
             reversed_word.append(char)
+            # print(reversed_word)
 
     for letter in reversed_word:
+        print(letter)
         stack.push(letter)
 
 
@@ -29,7 +32,7 @@ def reverse_letters(phrase):
 
 
 print(reverse_letters("teste(lagel)"))
-print(reverse_letters("(abcd)"))
-print(reverse_letters("(u(love)i)"))
-print(reverse_letters("(ed(et(oc))el)"))
-print(reverse_letters("a(bcdefghijkl(mno)p)q"))
+# print(reverse_letters("(abcd)"))
+# print(reverse_letters("(u(love)i)"))
+# print(reverse_letters("(ed(et(oc))el)"))
+# print(reverse_letters("a(bcdefghijkl(mno)p)q"))

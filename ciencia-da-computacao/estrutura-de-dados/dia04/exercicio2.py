@@ -26,21 +26,11 @@ class Stack:
     def min_value(self):
         if self.is_empty():
             return None
-        min_value = self._data.get_element_at(0)
-        for elem in self._data:
-            if elem < min_value:
-                min_value = elem
+        min_value = self._data.get_element_at(0).value
+        for i in range(1, len(self._data)):
+            if self._data.get_element_at(i).value < min_value:
+                min_value = self._data.get_element_at(i).value
         return min_value
-
-    def __str__(self):
-        str_items = ""
-        for i in range(self.size()):
-            value = self._data[i]
-            str_items += str(value)
-            if i + 1 < self.size():
-                str_items += ", "
-
-        return "Stack(" + str_items + ")"
 
 
 # if __name__ == "__main__":
@@ -78,7 +68,7 @@ if __name__ == "__main__":
         content_stack.push(elem)
 
     # saída: 1
-    print(content_stack.min_value())
+    # print(content_stack)
     content_stack.push(-5)
-    # saída: -5
+    # # saída: -5
     print(content_stack.min_value())
