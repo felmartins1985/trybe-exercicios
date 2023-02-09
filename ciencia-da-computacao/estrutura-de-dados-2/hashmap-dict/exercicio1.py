@@ -22,14 +22,12 @@ def count_words(words, chars):
                 str_count[char] += 1
 
                 if str_count[char] > alphabet[char]:
-                    print(
-                        f"'{char}'ocorre com mais freq. do que no alfabeto."
-                    )
+                    print(f"'{char}'ocorre com mais freq. do que no alfabeto.")
                     break
         else:
             print(f"Considerar {word}")
             ans += len(word)
-            # print(str_count)
+            print(str_count)
 
     return ans
 
